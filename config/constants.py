@@ -1,0 +1,3 @@
+FARKAS="FK"
+FEW="FW"
+ALL="A"
