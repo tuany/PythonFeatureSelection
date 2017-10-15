@@ -4,12 +4,76 @@
 		"selected_items":
 		[
 			[
+				"to",
+				"total_features"
+			],
+			[
+				"optim",
+				"optimizer"
+			],
+			[
+				"ra",
+				"random_state"
+			],
+			[
+				"res",
+				"reshape"
+			],
+			[
+				"rbf",
+				"rbf_param"
+			],
+			[
+				"bes",
+				"best_options"
+			],
+			[
+				"opti",
+				"optimization"
+			],
+			[
+				"__",
+				"__dimensions"
+			],
+			[
+				"Bina",
+				"BinaryPSO"
+			],
+			[
+				"X",
+				"X_2d"
+			],
+			[
+				"as",
+				"asd"
+			],
+			[
 				"y",
 				"y_test"
 			],
 			[
-				"ra",
-				"ravel"
+				"X_",
+				"X_train"
+			],
+			[
+				"select",
+				"selected_features"
+			],
+			[
+				"svm",
+				"svm_linear_p"
+			],
+			[
+				"y_",
+				"y_test"
+			],
+			[
+				"X_t",
+				"X_test"
+			],
+			[
+				"class",
+				"classifier"
 			],
 			[
 				"few",
@@ -450,70 +514,6 @@
 			[
 				"con",
 				"conjTreino"
-			],
-			[
-				"max",
-				"maxfitness"
-			],
-			[
-				"n",
-				"nBits"
-			],
-			[
-				"gare",
-				"gareal_rwSelection"
-			],
-			[
-				"gabin",
-				"gabin_lrSelection"
-			],
-			[
-				"object",
-				"objectGA"
-			],
-			[
-				"objec",
-				"objectGA"
-			],
-			[
-				"o",
-				"object"
-			],
-			[
-				"gareal",
-				"gareal_raMutation"
-			],
-			[
-				"gareal_",
-				"gareal_spCrossover"
-			],
-			[
-				"gar",
-				"gareal_rwSelection"
-			],
-			[
-				"cum",
-				"cumulative_f"
-			],
-			[
-				"fitn",
-				"fitness_p"
-			],
-			[
-				"fitness",
-				"fitness_p"
-			],
-			[
-				"sum",
-				"sum_fitness"
-			],
-			[
-				"fit",
-				"fitness_p"
-			],
-			[
-				"select",
-				"select_breeders"
 			]
 		]
 	},
@@ -523,24 +523,43 @@
 			"file": "main.py",
 			"settings":
 			{
-				"buffer_size": 1549,
+				"buffer_size": 4035,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/Tuany/Documents/GitHub/PythonFaceDetection/main.py",
+			"file": "svmrbf.py",
 			"settings":
 			{
-				"buffer_size": 5663,
+				"buffer_size": 3225,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "dataConverter.py",
+			"file": "pso.py",
 			"settings":
 			{
-				"buffer_size": 1237,
+				"buffer_size": 4474,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "gridSerachExample.py",
+			"settings":
+			{
+				"buffer_size": 4030,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "custom_feature_selection.py",
+			"settings":
+			{
+				"buffer_size": 1677,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -609,20 +628,23 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Tuany/Documents/GitHub/PythonFeatureSelection"
+		"/C/Users/Tuany/Documents/GitHub/PythonFeatureSelection",
+		"/C/Users/Tuany/Documents/GitHub/PythonFeatureSelection/data"
 	],
 	"file_history":
 	[
+		"/C/Users/Tuany/Documents/GitHub/PythonFeatureSelection/data/distances_farkas.csv",
+		"/C/Users/Tuany/Documents/GitHub/PythonFeatureSelection/asd.py",
+		"/C/Users/Tuany/Documents/GitHub/PythonFeatureSelection/pso.py",
+		"/C/Users/Tuany/Documents/GitHub/PythonFaceDetection/main.py",
 		"/C/Users/Tuany/AppData/Roaming/Sublime Text 3/Packages/SublimePythonIDE/SublimePython.sublime-settings",
 		"/C/Users/Tuany/AppData/Roaming/Sublime Text 3/Packages/User/SublimePython.sublime-settings",
 		"/C/Users/Tuany/Documents/GitHub/PythonFeatureSelection/plot_iris_exercise.py",
 		"/C/Users/Tuany/Documents/GitHub/PythonFeatureSelection/config/classpathDir.py",
-		"/C/Users/Tuany/Documents/GitHub/PythonFaceDetection/main.py",
 		"/C/Users/Tuany/Documents/GitHub/PythonFeatureSelection/dataConverter.py",
 		"/C/Users/Tuany/Documents/GitHub/PythonFeatureSelection/.gitignore",
 		"/C/Users/Tuany/Documents/GitHub/PythonFeatureSelection/config/constants.py",
 		"/C/Users/Tuany/Documents/GitHub/PythonFeatureSelection/data/distances_few.csv",
-		"/C/Users/Tuany/Documents/GitHub/PythonFeatureSelection/data/distances_farkas.csv",
 		"/C/Users/Tuany/Documents/GitHub/PythonFeatureSelection/data/distances_all.csv",
 		"/C/Users/Tuany/Documents/GitHub/PythonFeatureSelection/pythonFeatureSelection.sublime-project",
 		"/C/Users/Tuany/Documents/GitHub/PythonFeatureSelection/data/controles2/distances_farkas.csv",
@@ -738,13 +760,11 @@
 		"/C/Users/Tuany/Documents/GitHub/PythonFaceDetection/img/DSCN4057distances.csv",
 		"/C/Users/Tuany/Documents/GitHub/PythonFaceDetection/README.md",
 		"/C/Users/Tuany/Documents/GitHub/PythonFaceDetection/cameraCalibration.py",
-		"/C/Users/Tuany/Documents/GitHub/PythonFaceDetection/focalLengthDetector.py",
-		"/C/Users/Tuany/Documents/GitHub/PythonFaceDetection/img/DSCN4059/points_det_0.csv",
-		"/C/Users/Tuany/Documents/GitHub/PythonFaceDetection/img/DSCN4059/points.csv"
+		"/C/Users/Tuany/Documents/GitHub/PythonFaceDetection/focalLengthDetector.py"
 	],
 	"find":
 	{
-		"height": 28.0
+		"height": 59.0
 	},
 	"find_in_files":
 	{
@@ -758,6 +778,39 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			")\n",
+			"GridSerachCV",
+			"scoring=accuracy",
+			"poly_svc",
+			"poly_param",
+			"rbf_svc",
+			"rbf_param",
+			"SVC",
+			"svc",
+			"parameters",
+			"()\n",
+			">>> ",
+			"f",
+			"tree",
+			"np",
+			"rfecv1",
+			"rfecv",
+			"RFECV",
+			"rfecv",
+			"rfecv1",
+			"rfecv",
+			"RFECV",
+			"rfecv",
+			"RFECV",
+			"rfecv",
+			"bf",
+			"Linear",
+			"linear",
+			"SVC",
+			"svc",
+			" \n",
+			"classifier",
+			"c1",
 			"\tprint(\"X_train sample \" + str(X_train.shape))",
 			"__check",
 			"few_dict",
@@ -852,40 +905,7 @@
 			"farkas",
 			"few",
 			"cf.OUTPUT_DIR",
-			"aggregate_distances",
-			"saveDistances",
-			"few",
-			"csvfile",
-			"filename",
-			"count",
-			"distances_few",
-			"all",
-			"few",
-			"all_distances_dict",
-			"distances",
-			"Distances",
-			"distances",
-			"]\n",
-			")))\n",
-			"yB",
-			"xB",
-			"yA",
-			"xA",
-			"[]\n",
-			"yA",
-			"xA",
-			"\n\trefCoords = np.vstack([(points[\"x_36\"], points[\"y_36\"]), (points[\"x_40\"], points[\"y_40\"]), (mnX, mnY), (points[\"x_34\"], points[\"y_34\"]), (points[\"x_38\"], points[\"y_38\"]), (points[\"x_39\"], points[\"y_39\"]), (points[\"x_44\"], points[\"y_44\"]), (points[\"x_45\"], points[\"y_45\"])])\n\tobjCoords = np.vstack([(points[\"x_46\"], points[\"y_46\"]), (points[\"x_43\"], points[\"y_43\"]), (pqX, pqY), (points[\"x_52\"], points[\"y_52\"]), (points[\"x_42\"], points[\"y_42\"]), (points[\"x_41\"], points[\"y_41\"]), (points[\"x_48\"], points[\"y_48\"]), (points[\"x_47\"], points[\"y_47\"]) ])\n\t# plot\n\tlog.info(\"Image path {}\".format(final_image_path))\n\timage = cv2.imread(final_image_path)\n\tif image is not None :\n\t\torig = image.copy()\n\t\tcolors = [(160, 204, 20), (100, 255, 81), (50, 250, 0), (190, 65, 255), (204, 20, 190), (100, 100, 50), (20, 50, 200), (70, 255, 130), (80, 120, 70)]\n\t\t# loop over the original points\n\t\tfor ((xA, yA), (xB, yB), nam, color) in zip(refCoords, objCoords, names, colors):\n\t\t\t# draw circles corresponding to the current points and\n\t\t\t# connect them with a line\n\t\t\tcv2.circle(orig, (int(xA), int(yA)), 5, color, -1)\n\t\t\tcv2.circle(orig, (int(xB), int(yB)), 5, color, -1)\n\t\t\tcv2.putText(orig, \"{}\".format(nam), (int(xB), int(xB - 100)),\n\t\t\t\tcv2.FONT_HERSHEY_SIMPLEX, 0.55, color, 2)\n\n\t\t\tcv2.line(orig, (int(xA), int(yA)), (int(xB), int(yB)),\n\t\t\t\tcolor, 2)\n\t \n\t\t\t# compute the Euclidean distance between the coordinates,\n\t\t\t# and then convert the distance in pixels to distance in\n\t\t\t# units\n\t\t\tD = dist.euclidean((xA, yA), (xB, yB)) / reference[\"pixelsPerMetric\"]\n\t\t\t(mX, mY) = midpoint((xA, yA), (xB, yB))\n\t\t\tcv2.putText(orig, \"{:.1f}cm\".format(D), (int(mX), int(mY - 10)),\n\t\t\t\tcv2.FONT_HERSHEY_SIMPLEX, 0.55, color, 1)\n\t \n\t\t\t# show the output image\n\t\tcv2.imwrite(cf.OUTPUT_DIR+\"/exemplo.jpg\", orig)",
-			"37",
-			"38",
-			"34",
-			"45",
-			"44",
-			"39",
-			"38",
-			"43",
-			"40",
-			"6",
-			"37"
+			"aggregate_distances"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -939,7 +959,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -948,15 +968,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1549,
+						"buffer_size": 4035,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1267,
-								1267
+								1420,
+								1420
 							]
 						],
 						"settings":
@@ -966,70 +986,132 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 495.0,
+						"translation.y": 1634.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/C/Users/Tuany/Documents/GitHub/PythonFaceDetection/main.py",
+					"file": "svmrbf.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5663,
+						"buffer_size": 3225,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								172,
-								161
+								1082,
+								1057
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"open_with_edit": true,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 380.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "pso.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4474,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2564,
+								2564
 							]
 						],
 						"settings":
 						{
 							"git_gutter_is_enabled": true,
 							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2358.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "dataConverter.py",
+					"buffer": 3,
+					"file": "gridSerachExample.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1237,
+						"buffer_size": 4030,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								868,
-								859
+								3951,
+								3532
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "custom_feature_selection.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1677,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								567,
+								567
 							]
 						],
 						"settings":
 						{
 							"git_gutter_is_enabled": true,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 91.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -1037,7 +1119,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -1074,7 +1156,7 @@
 	"project": "pythonFeatureSelection.sublime-project",
 	"replace":
 	{
-		"height": 52.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":

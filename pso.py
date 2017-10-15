@@ -17,9 +17,11 @@ import seaborn as sns
 import pandas as pd
 import asd 
 import time
+import classpathDir as cd
 
 # Import PySwarms
-import pyswarms as ps
+from pyswarms.discrete import BinaryPSO
+from pyswarms.utils.search import GridSearch
 from sklearn.datasets import make_classification
 # from sklearn import linear_model
 from sklearn.svm import SVC, LinearSVC
@@ -42,19 +44,20 @@ def f_per_particle(m, alpha):
     numpy.ndarray
         Computed objective function
     """
-    total_features = 15
+    total_features = X.shape[1]
     # Get the subset of the features from the binary mask
     if np.count_nonzero(m) == 0:
         X_subset = X
     else:
         X_subset = X[:,m==1]
     # Perform classification and store performance in P
+    print("Fitting to classifier")
     classifier.fit(X_subset, y)
     P = (classifier.predict(X_subset) == y).mean()
     # Compute for the objective function
     j = (alpha * (1.0 - P)
         + (1.0 - alpha) * (1 - (X_subset.shape[1] / total_features)))
-
+    print("Fitness of particle %.4f" % j)
     return j
 
 def f(x, alpha=0.88):
@@ -79,7 +82,7 @@ def f(x, alpha=0.88):
 start_time = time.time()
 # X, y = make_classification(n_samples=100, n_features=15, n_classes=3, 
 # 							n_informative=4, n_redundant=1, n_repeated=2, random_state=1)
-X, y = asd.load_data('FK') # farkas subset
+X, y = asd.load_data('FW') # farkas subset
 print(X.shape)
 print(y.shape)
 
@@ -92,7 +95,8 @@ df['labels'] = pd.Series(y)
 # Create an instance of the classifier
 global classifier
 # classifier = linear_model.LogisticRegression()
-classifier = SVC(kernel="rbf")
+print("Initializing classifier")
+classifier = SVC(kernel="linear", C=316.227766017, gamma=0.0001, random_state=933561)
 # classifier = LinearSVC()
 
 # Initialize swarm, arbitrary
@@ -105,22 +109,42 @@ options = {'c1': 1.4, 'c2': 1.5, 'w':0.7, 'k': 20, 'p':2}
 
 # Call instance of PSO
 dimensions = X.shape[1] # dimensions should be the number of features
+print("dimensions: %d" % dimensions)
 # optimizer.reset()
-optimizer = ps.discrete.BinaryPSO(n_particles=60, dimensions=dimensions, options=options)
+optimizer = BinaryPSO(n_particles=40, dimensions=dimensions, options=options)
 
 # Perform optimization
-cost, pos = optimizer.optimize(f, print_step=10, iters=400, verbose=2)
-
+print("Calling optimizer")
+# 100 iter => none selected
+cost, pos = optimizer.optimize(f, print_step=1, iters=500, verbose=2)
 
 # Get the selected features from the final positions
 X_selected_features = X[:,pos==1]  # subset
+print(X_selected_features)
 
 # Perform classification and store performance in P
 classifier.fit(X_selected_features, y)
 
+selected_df = pd.DataFrame(X_selected_features)
+selected_df.to_csv(cd.OUTPUT_DIR+"/gs_results_pso_svm_accuracy.csv", sep='\t', encoding='utf-8')
+
 # Compute performance
 subset_performance = (classifier.predict(X_selected_features) == y).mean()
 
-
 print('Subset performance: %.3f' % (subset_performance))
+# print('Optimizing hyperparameters')
+
+# options = {
+#             'c1': [0.7, 1, 1.4, 2, 3],
+#             'c2': [0.7, 1, 1.5, 2, 3],
+#             'w' : [0.4, 0.7, 2, 3, 5],
+#             'k' : [5, 10, 15, 20, 30],
+#             'p' : [1, 2] }
+# g = GridSearch(BinaryPSO, n_particles=40, dimensions=dimensions,
+#                    options=options, objective_func=f, iters=100)
+# best_score, best_options = g.search(True)
+# bestOptdf = pd.DataFrame(best_options)
+# bestOptdf.to_csv(cd.OUTPUT_DIR+"/gs_results_pso_svm_accuracy.csv", sep='\t', encoding='utf-8') 
+# print('Performance after hyperparameter optimization: %.3f' % best_score)
+# print('Best options:')
 print("--- Total execution time: %s minutes ---" % ((time.time() - start_time)/60))
