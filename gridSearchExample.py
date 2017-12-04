@@ -57,8 +57,8 @@ Xdf, ydf = asd.load_data('FW')
 X = Xdf.values
 y = ydf.values
 print("Data loaded")
-min_max_scaler = MinMaxScaler()
-X = min_max_scaler.fit_transform(X)
+# PSO selected features [0,1,2,3,4,5,6,7]
+X = X[:, 0:8]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=random_state)
 # X_train = X

@@ -105,13 +105,13 @@ classifier = SVC(kernel="linear", C=316.227766017, gamma=0.0001, random_state=93
 # w = inertia parameter, float
 # k = number of neighbors to be considered, int and k < n_particles
 # p = {1,2}, Minkowski p-norm. 1: sum-of-absolute values (L1), 2: euclidean distance (L2) 
-options = {'c1': 1.4, 'c2': 1.5, 'w':0.7, 'k': 20, 'p':2}
+options = {'c1': 3, 'c2': 1.5, 'w':0.7, 'k': 20, 'p':2}
 
 # Call instance of PSO
 dimensions = X.shape[1] # dimensions should be the number of features
 print("dimensions: %d" % dimensions)
 # optimizer.reset()
-optimizer = BinaryPSO(n_particles=40, dimensions=dimensions, options=options)
+optimizer = BinaryPSO(n_particles=20, dimensions=dimensions, options=options)
 
 # Perform optimization
 print("Calling optimizer")
