@@ -9,7 +9,7 @@ def getLogger(loggerForFile):
 		console = logging.StreamHandler()
 		console.setLevel(logging.DEBUG)
 		# set a format which is simpler for console use
-		formatter = logging.Formatter('%(name)-12s: %(levelname)-8s %(message)s')
+		formatter = logging.Formatter('%(asctime)s %(name)-12s: %(levelname)-8s %(message)s', datefmt='%d/%m/%Y %I:%M:%S')
 		# tell the handler to use this format
 		console.setFormatter(formatter)
 		# add the handler to the root logger
