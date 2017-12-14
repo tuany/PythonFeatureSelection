@@ -5,11 +5,11 @@ from sklearn.pipeline import make_pipeline
 from numpy import arange, concatenate, logspace
 
 def make_pipes(dimensionality_reductions):
-    random_state = 100000
+    random_state = 1000000
     kernels = ('linear', 'poly', 'rbf', 'sigmoid')
-    Cs = logspace(-4, 3, 15)#concatenate([arange(0.1, 1.1, 0.1), arange(2, 6), arange(10, 60, 10)])  # all kernels
-    gammas = logspace(-2, 3, 9)#(0.01, 0.1, 1.0, 10.0, 100.0)  # except linear
-    one_gamma = ('auto',)
+    Cs = concatenate([arange(0.1, 1.1, 0.1), arange(2, 6), arange(10, 60, 10)]) #logspace(-4, 3, 15) all kernels
+    gammas = (0.001, 0.01, 0.1, 1.0, 10.0, 100.0)# logspace(-2, 3, 9)  # except linear
+    one_gamma = ('auto', 0.1)
     degrees_poly = (2, 3, 4)  # only poly
     one_degree = (3,)
     # Independent term in kernel function. It is only significant in poly and sigmoid

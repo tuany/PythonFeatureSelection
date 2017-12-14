@@ -10,4 +10,3 @@ CONTROL_DIR_2=DATA_DIR+"/controles2"
 FEW_CSV=DATA_DIR+"/distances_few.csv" 
 ALL_CSV=DATA_DIR+"/distances_all.csv"
 FARKAS_CSV=DATA_DIR+"/distances_farkas.csv"
-

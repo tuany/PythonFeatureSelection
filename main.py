@@ -1,7 +1,7 @@
 from sklearn.svm import SVC
 from sklearn.neural_network import MLPClassifier
 from sklearn.naive_bayes import GaussianNB
-from classifiers import svm, nb
+from classifiers import svm, nb, nn
 from classifiers.custom_feature_selection import mRMRProxy, FCBFProxy, CFSProxy, RFSProxy
 from sklearn.model_selection import StratifiedKFold, cross_validate
 import asd
@@ -69,7 +69,7 @@ def run_combinations():
 									 )
 
 		pipes, reductions_names, models_names = [], [], []
-		for m in [svm, nb]:
+		for m in [svm, nb, nn]:
 			pipe, reductions_name, models_name = m.make_pipes(dimensionality_reductions)
 			pipes += pipe
 			reductions_names += reductions_name
@@ -79,7 +79,7 @@ def run_combinations():
 
 		columns = ['id', 'precision', 'recall', 'f1', 'accuracy', 'dimensionality_reduction', 'error', 'classifier', 'dataset']
 
-		classifiers = [SVC(), GaussianNB()]
+		classifiers = [SVC(), GaussianNB(), MLPClassifier()]
 		for classifier in classifiers:
 			columns += classifier.get_params().keys()
 
@@ -101,7 +101,7 @@ def run_combinations():
 												y=labels,
 												scoring=scoring,
 												cv=cv,
-												n_jobs=1)  # all CPUs
+												n_jobs=-1)  # all CPUs
 					log.info("Cross-Validation success!")
 				except ValueError as e:
 					log.exception("Exception during pipeline execution", extra=e)

@@ -6,11 +6,12 @@ from numpy import arange, concatenate
 
 
 def make_pipes(dimensionality_reductions):
+    random_state = 1000000
     hidden_layer_sizes = concatenate([arange(0.1, 1.1, 0.1), arange(10, 110, 10)])
     learning_rate = 'adaptive'
     activations = ('identity', 'logistic', 'tanh', 'relu')
     # momentums = (0.1, 0.5, 0.9)
-    max_iters = (10000000,)
+    max_iters = (100000,)
 
     pipes = []
     reductions_names = []
@@ -25,7 +26,8 @@ def make_pipes(dimensionality_reductions):
                                               learning_rate=learning_rate,
                                               activation=activation,
                                               # momentum=momentum,
-                                              max_iter=max_iter)
+                                              max_iter=max_iter,
+                                              random_state=random_state)
                         pipe = make_pipeline(dimensionality_reduction, model)
                         pipes.append(pipe)
                         reductions_names.append(dimensionality_reduction.__class__.__name__)

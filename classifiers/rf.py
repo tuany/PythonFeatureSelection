@@ -5,7 +5,7 @@ from sklearn.pipeline import make_pipeline
 import numpy as np
 
 def make_pipes(dimensionality_reductions):
-    random_state = 100000
+    random_state = 1000000
     max_features = np.concatenate([["log2", "sqrt"], np.arange(0.05, 1, 0.1)])
     n_estimators = np.concatenate([np.arange(5, 100, 15), np.arange(200, 1000, 200), np.arange(1000, 11000, 5000)])
     Cs = logspace(-4, 3, 15)#concatenate([arange(0.1, 1.1, 0.1), arange(2, 6), arange(10, 60, 10)])  # all kernels
