@@ -23,26 +23,26 @@ def run_combinations():
 	X, y = asd.load_data(d_type='euclidian', unit='px', m='1000', dataset='all', labels=False)
 	all_samples['euclidian_px_1000_all'] = (X, y)
 
-	X, y = asd.load_data(d_type='manhattan', unit='px', m='1000', dataset='all', labels=False)
-	all_samples['manhattan_px_1000_all'] = (X, y)
+	# X, y = asd.load_data(d_type='manhattan', unit='px', m='1000', dataset='all', labels=False)
+	# all_samples['manhattan_px_1000_all'] = (X, y)
 
-	X, y = asd.load_data(d_type='euclidian', unit='px', m='', dataset='all', labels=False)
-	all_samples['euclidian_px_all'] = (X, y)
+	# X, y = asd.load_data(d_type='euclidian', unit='px', m='', dataset='all', labels=False)
+	# all_samples['euclidian_px_all'] = (X, y)
 
-	X, y = asd.load_data(d_type='manhattan', unit='px', m='', dataset='all', labels=False)
-	all_samples['manhattan_px_all'] = (X, y)
+	# X, y = asd.load_data(d_type='manhattan', unit='px', m='', dataset='all', labels=False)
+	# all_samples['manhattan_px_all'] = (X, y)
 
-	X, y = asd.load_data(d_type='euclidian', unit='px', m='1000', dataset='farkas', labels=False)
-	all_samples['euclidian_px_1000_farkas'] = (X, y)
+	# X, y = asd.load_data(d_type='euclidian', unit='px', m='1000', dataset='farkas', labels=False)
+	# all_samples['euclidian_px_1000_farkas'] = (X, y)
 
-	X, y = asd.load_data(d_type='manhattan', unit='px', m='1000', dataset='farkas', labels=False)
-	all_samples['manhattan_px_1000_farkas'] = (X, y)
+	# X, y = asd.load_data(d_type='manhattan', unit='px', m='1000', dataset='farkas', labels=False)
+	# all_samples['manhattan_px_1000_farkas'] = (X, y)
 
-	X, y = asd.load_data(d_type='euclidian', unit='px', m='', dataset='farkas', labels=False)
-	all_samples['euclidian_px_farkas'] = (X, y)
+	# X, y = asd.load_data(d_type='euclidian', unit='px', m='', dataset='farkas', labels=False)
+	# all_samples['euclidian_px_farkas'] = (X, y)
 
-	X, y = asd.load_data(d_type='manhattan', unit='px', m='', dataset='farkas', labels=False)
-	all_samples['manhattan_px_farkas'] = (X, y)
+	# X, y = asd.load_data(d_type='manhattan', unit='px', m='', dataset='farkas', labels=False)
+	# all_samples['manhattan_px_farkas'] = (X, y)
 
 	for k in all_samples.keys():
 		log.info("Running models for %s dataset", k)

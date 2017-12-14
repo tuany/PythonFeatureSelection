@@ -4,6 +4,7 @@ from skfeature.function.statistical_based import CFS
 from skfeature.function.sparse_learning_based import RFS
 import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
+import inspect
 
 class mRMR(BaseEstimator, TransformerMixin):
 	def __init__(self, n_features_to_select=2, mode='rank', verbose=True):
@@ -36,7 +37,7 @@ class FCBF(BaseEstimator, TransformerMixin):
 	def fit(self, X, y):
 		self._X = X
 		self._y = y
-		self.ranking_ = FCBF.fcbf(self._X, self._y, self.mode, kwargs={'delta':self.delta})
+		self.ranking_ = FCBF.fcbf(self._X, self._y, kwargs={'delta':self.delta})
 		if self.verbose:
 			print("Feature ranking: " + str(self.ranking_))
 		return self

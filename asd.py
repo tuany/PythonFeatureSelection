@@ -10,7 +10,6 @@ context.loadModules()
 # outros modulos aqui
 import logger
 import classpathDir as cdir
-import constants
 import numpy as np
 import pandas as pd
 import os
