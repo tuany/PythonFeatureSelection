@@ -1,12 +1,13 @@
 from __future__ import print_function
-from skfeature.function.information_theoretical_based import MRMR, FCBF
-from skfeature.function.statistical_based import CFS
-from skfeature.function.sparse_learning_based import RFS
+from skfeature.function.information_theoretical_based.MRMR import mrmr
+from skfeature.function.information_theoretical_based.FCBF import fcbf
+from skfeature.function.statistical_based.CFS import cfs
+from skfeature.function.sparse_learning_based.RFS import rfs
 import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
 import inspect
 
-class mRMR(BaseEstimator, TransformerMixin):
+class mRMRProxy(BaseEstimator, TransformerMixin):
 	def __init__(self, n_features_to_select=2, mode='rank', verbose=True):
 		self.n_features_to_select = n_features_to_select
 		self.mode = mode
@@ -15,7 +16,7 @@ class mRMR(BaseEstimator, TransformerMixin):
 	def fit(self, X, y):
 		self._X = X
 		self._y = y
-		self.ranking_ = MRMR.mrmr(self._X, self._y, self.mode)
+		self.ranking_ = mrmr(self._X, self._y, self.mode)
 		if self.verbose:
 			print("Feature ranking: " + str(self.ranking_))
 		return self
@@ -27,7 +28,7 @@ class mRMR(BaseEstimator, TransformerMixin):
 		self.fit(X, y)
 		return self.transform(X)
 
-class FCBF(BaseEstimator, TransformerMixin):
+class FCBFProxy(BaseEstimator, TransformerMixin):
 	def __init__(self, n_features_to_select=2, mode='rank', delta=0.0, verbose=True):
 		self.n_features_to_select = n_features_to_select
 		self.delta = delta
@@ -37,7 +38,7 @@ class FCBF(BaseEstimator, TransformerMixin):
 	def fit(self, X, y):
 		self._X = X
 		self._y = y
-		self.ranking_ = FCBF.fcbf(self._X, self._y, kwargs={'delta':self.delta})
+		self.ranking_ = fcbf(self._X, self._y, kwargs={'delta':self.delta})
 		if self.verbose:
 			print("Feature ranking: " + str(self.ranking_))
 		return self
@@ -49,7 +50,7 @@ class FCBF(BaseEstimator, TransformerMixin):
 		self.fit(X, y)
 		return self.transform(X)
 
-class CFS(BaseEstimator, TransformerMixin):
+class CFSProxy(BaseEstimator, TransformerMixin):
 	def __init__(self, n_features_to_select=None, mode='rank', verbose=True):
 		self.n_features_to_select = n_features_to_select
 		self.mode = mode
@@ -58,7 +59,7 @@ class CFS(BaseEstimator, TransformerMixin):
 	def fit(self, X, y):
 		self._X = X
 		self._y = y
-		self.ranking_ = CFS.cfs(self._X, self._y, self.mode)
+		self.ranking_ = cfs(self._X, self._y, self.mode)
 		if self.verbose:
 			print("Feature ranking: " + str(self.ranking_))
 		return self
@@ -73,7 +74,7 @@ class CFS(BaseEstimator, TransformerMixin):
 		self.fit(X, y)
 		return self.transform(X)
 
-class RFS(BaseEstimator, TransformerMixin):
+class RFSProxy(BaseEstimator, TransformerMixin):
 	def __init__(self, n_features_to_select=None, mode='rank', gamma=1, verbose=True):
 		self.n_features_to_select = n_features_to_select
 		self.mode = mode
@@ -83,7 +84,7 @@ class RFS(BaseEstimator, TransformerMixin):
 	def fit(self, X, y):
 		self._X = X
 		self._y = y
-		self.ranking_ = RFS.rfs(self._X, self._y, self.mode, kwargs={'gamma':self.gamma, 'verbose':self.verbose})
+		self.ranking_ = rfs(self._X, self._y, self.mode, kwargs={'gamma':self.gamma, 'verbose':self.verbose})
 		if self.verbose:
 			print("Feature ranking: " + str(self.ranking_))
 		return self

@@ -2,7 +2,7 @@ from sklearn.svm import SVC
 from sklearn.neural_network import MLPClassifier
 from sklearn.naive_bayes import GaussianNB
 from classifiers import svm, nb
-from classifiers.custom_feature_selection import mRMR, FCBF, CFS, RFS
+from classifiers.custom_feature_selection import mRMRProxy, FCBFProxy, CFSProxy, RFSProxy
 from sklearn.model_selection import StratifiedKFold, cross_validate
 import asd
 import csv
@@ -23,26 +23,26 @@ def run_combinations():
 	X, y = asd.load_data(d_type='euclidian', unit='px', m='1000', dataset='all', labels=False)
 	all_samples['euclidian_px_1000_all'] = (X, y)
 
-	# X, y = asd.load_data(d_type='manhattan', unit='px', m='1000', dataset='all', labels=False)
-	# all_samples['manhattan_px_1000_all'] = (X, y)
+	X, y = asd.load_data(d_type='manhattan', unit='px', m='1000', dataset='all', labels=False)
+	all_samples['manhattan_px_1000_all'] = (X, y)
 
-	# X, y = asd.load_data(d_type='euclidian', unit='px', m='', dataset='all', labels=False)
-	# all_samples['euclidian_px_all'] = (X, y)
+	X, y = asd.load_data(d_type='euclidian', unit='px', m='', dataset='all', labels=False)
+	all_samples['euclidian_px_all'] = (X, y)
 
-	# X, y = asd.load_data(d_type='manhattan', unit='px', m='', dataset='all', labels=False)
-	# all_samples['manhattan_px_all'] = (X, y)
+	X, y = asd.load_data(d_type='manhattan', unit='px', m='', dataset='all', labels=False)
+	all_samples['manhattan_px_all'] = (X, y)
 
-	# X, y = asd.load_data(d_type='euclidian', unit='px', m='1000', dataset='farkas', labels=False)
-	# all_samples['euclidian_px_1000_farkas'] = (X, y)
+	X, y = asd.load_data(d_type='euclidian', unit='px', m='1000', dataset='farkas', labels=False)
+	all_samples['euclidian_px_1000_farkas'] = (X, y)
 
-	# X, y = asd.load_data(d_type='manhattan', unit='px', m='1000', dataset='farkas', labels=False)
-	# all_samples['manhattan_px_1000_farkas'] = (X, y)
+	X, y = asd.load_data(d_type='manhattan', unit='px', m='1000', dataset='farkas', labels=False)
+	all_samples['manhattan_px_1000_farkas'] = (X, y)
 
-	# X, y = asd.load_data(d_type='euclidian', unit='px', m='', dataset='farkas', labels=False)
-	# all_samples['euclidian_px_farkas'] = (X, y)
+	X, y = asd.load_data(d_type='euclidian', unit='px', m='', dataset='farkas', labels=False)
+	all_samples['euclidian_px_farkas'] = (X, y)
 
-	# X, y = asd.load_data(d_type='manhattan', unit='px', m='', dataset='farkas', labels=False)
-	# all_samples['manhattan_px_farkas'] = (X, y)
+	X, y = asd.load_data(d_type='manhattan', unit='px', m='', dataset='farkas', labels=False)
+	all_samples['manhattan_px_farkas'] = (X, y)
 
 	for k in all_samples.keys():
 		log.info("Running models for %s dataset", k)
@@ -61,11 +61,11 @@ def run_combinations():
 
 		dimensionality_reductions = (None,
 									 PCA(n_components=n_features_to_keep),
-									 ReliefF(n_features_to_select=n_features_to_keep, n_neighbors=10, n_jobs=1),
-									 mRMR(n_features_to_select=n_features_to_keep, verbose=False),
-									 FCBF(n_features_to_select=n_features_to_keep, verbose=False),
-									 CFS(n_features_to_select=n_features_to_keep, verbose=False),
-									 RFS(n_features_to_select=n_features_to_keep, verbose=False)
+									 ReliefF(n_features_to_select=n_features_to_keep, n_neighbors=10, n_jobs=-1),
+									 mRMRProxy(n_features_to_select=n_features_to_keep, verbose=False),
+									 FCBFProxy(n_features_to_select=n_features_to_keep, verbose=False),
+									 CFSProxy(n_features_to_select=n_features_to_keep, verbose=False),
+									 RFSProxy(n_features_to_select=n_features_to_keep, verbose=False)
 									 )
 
 		pipes, reductions_names, models_names = [], [], []
