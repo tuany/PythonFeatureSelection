@@ -100,9 +100,6 @@ ENV/
 # mypy
 .mypy_cache/
 
-data/casos/
-data/controles/
-data/controles2/
 output/*
 .sublime-workspace
 .sublime-project
