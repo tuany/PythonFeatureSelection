@@ -1,0 +1,31 @@
+nohup: ignorando entrada
+17/12/2017 06:56:26 asd.pyc     : INFO     Loading data from csv file
+17/12/2017 06:56:26 asd.pyc     : INFO     Casos file: /home/tuany/workspace/PythonFeatureSelection/data/casos/distances_all_px_1000_euclidian.csv
+17/12/2017 06:56:26 asd.pyc     : INFO     Controles file: /home/tuany/workspace/PythonFeatureSelection/data/controles/distances_all_px_1000_euclidian.csv
+17/12/2017 06:56:26 asd.pyc     : INFO     Loading data from csv file
+17/12/2017 06:56:26 asd.pyc     : INFO     Casos file: /home/tuany/workspace/PythonFeatureSelection/data/casos/distances_all_px_1000_manhattan.csv
+17/12/2017 06:56:26 asd.pyc     : INFO     Controles file: /home/tuany/workspace/PythonFeatureSelection/data/controles/distances_all_px_1000_manhattan.csv
+17/12/2017 06:56:26 asd.pyc     : INFO     Loading data from csv file
+17/12/2017 06:56:26 asd.pyc     : INFO     Casos file: /home/tuany/workspace/PythonFeatureSelection/data/casos/distances_all_px_euclidian.csv
+17/12/2017 06:56:26 asd.pyc     : INFO     Controles file: /home/tuany/workspace/PythonFeatureSelection/data/controles/distances_all_px_euclidian.csv
+17/12/2017 06:56:26 asd.pyc     : INFO     Loading data from csv file
+17/12/2017 06:56:26 asd.pyc     : INFO     Casos file: /home/tuany/workspace/PythonFeatureSelection/data/casos/distances_all_px_manhattan.csv
+17/12/2017 06:56:26 asd.pyc     : INFO     Controles file: /home/tuany/workspace/PythonFeatureSelection/data/controles/distances_all_px_manhattan.csv
+17/12/2017 06:56:27 conjunto4.py: INFO     Running models for euclidian_px_1000_all dataset
+17/12/2017 06:56:27 conjunto4.py: INFO     X.shape (111, 2278), y.shape (111,)
+17/12/2017 06:56:27 conjunto4.py: INFO     Data has 111 instances and 2278 features
+17/12/2017 06:56:27 conjunto4.py: INFO     Total de modelos 7
+17/12/2017 06:56:27 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 06:56:27 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 06:56:27 conjunto4.py: INFO     #0 - CV result (accuracy) 0.75 for model gaussiannb and reduction NoneType
+17/12/2017 06:56:27 conjunto4.py: INFO     #0 - Saving results!
+Traceback (most recent call last):
+  File "conjunto4.py", line 125, in <module>
+    run_combinations()
+  File "conjunto4.py", line 120, in run_combinations
+    writer.writerow(results)
+  File "/usr/lib/python2.7/csv.py", line 152, in writerow
+    return self.writer.writerow(self._dict_to_list(rowdict))
+  File "/usr/lib/python2.7/csv.py", line 148, in _dict_to_list
+    + ", ".join([repr(x) for x in wrong_fields]))
+ValueError: dict contains fields not in fieldnames: 'n_features'

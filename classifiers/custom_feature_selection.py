@@ -38,7 +38,7 @@ class FCBFProxy(BaseEstimator, TransformerMixin):
 	def fit(self, X, y):
 		self._X = X
 		self._y = y
-		self.ranking_ = fcbf(self._X, self._y, kwargs={'delta':self.delta})
+		self.ranking_ = fcbf(self._X, self._y, self.mode, kwargs={'delta':self.delta})
 		if self.verbose:
 			print("Feature ranking: " + str(self.ranking_))
 		return self
