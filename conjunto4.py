@@ -46,7 +46,7 @@ def run_combinations():
 		# labels = code_test_samples(labels)
 		instances, features = samples.shape
 		log.info('Data has {0} instances and {1} features'.format(instances, features))
-		n_features_to_keep = int(0.008 * features)
+		n_features_to_keep = int(0.006 * features)
 
 		dimensionality_reductions = (None,
 									 PCA(n_components=n_features_to_keep),
@@ -54,7 +54,7 @@ def run_combinations():
 									 FCBFProxy(n_features_to_select=n_features_to_keep, verbose=False),
 									 CFSProxy(n_features_to_select=n_features_to_keep, verbose=False),
 									 RFSProxy(n_features_to_select=n_features_to_keep, verbose=False),
-									 ReliefF(n_features_to_select=n_features_to_keep, n_neighbors=50, n_jobs=-1)
+									 ReliefF(n_features_to_select=n_features_to_keep, n_neighbors=100, n_jobs=-1)
 									 )
 
 		pipes, reductions_names, models_names = [], [], []
