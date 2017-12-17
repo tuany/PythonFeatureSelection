@@ -1,7 +1,6 @@
 from sklearn.svm import SVC
 from sklearn.neural_network import MLPClassifier
 from sklearn.naive_bayes import GaussianNB
-from sklearn.ensemble import RandomForestClassifier
 from classifiers import svm, nb, nn
 from classifiers.custom_feature_selection import mRMRProxy, FCBFProxy, CFSProxy, RFSProxy
 from sklearn.model_selection import StratifiedKFold, cross_validate
@@ -49,13 +48,13 @@ def run_combinations():
 		n_features_to_keep = int(0.1 * features)
 
 		dimensionality_reductions = (None,
-									 # PCA(n_components=n_features_to_keep),
-									 # ReliefF(n_features_to_select=n_features_to_keep, n_neighbors=10, n_jobs=-1),
+									 PCA(n_components=n_features_to_keep),
+									 ReliefF(n_features_to_select=n_features_to_keep, n_neighbors=10, n_jobs=-1),
 									 mRMRProxy(n_features_to_select=n_features_to_keep, verbose=False)
 									 )
 
 		pipes, reductions_names, models_names = [], [], []
-		for m in [svm, nb, rf]:
+		for m in [svm, nb, nn]:
 			pipe, reductions_name, models_name = m.make_pipes(dimensionality_reductions)
 			pipes += pipe
 			reductions_names += reductions_name
@@ -65,7 +64,7 @@ def run_combinations():
 
 		columns = ['id', 'precision', 'recall', 'f1', 'accuracy', 'dimensionality_reduction', 'error', 'classifier', 'dataset']
 
-		classifiers = [SVC(), GaussianNB()]
+		classifiers = [SVC(), GaussianNB(), MLPClassifier()]
 		for classifier in classifiers:
 			columns += classifier.get_params().keys()
 
@@ -74,7 +73,7 @@ def run_combinations():
 				   'recall': 'recall',
 				   'f1': 'f1'}
 
-		with open('./output/bloco1-'+k+'.csv', 'wb') as csvfile:
+		with open('./output/bloco1.csv', 'wb') as csvfile:
 			writer = csv.DictWriter(csvfile, fieldnames=columns)
 			writer.writeheader()
 			id = 0

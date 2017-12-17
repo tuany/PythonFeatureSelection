@@ -7,10 +7,10 @@ from numpy import arange, concatenate, logspace
 def make_pipes(dimensionality_reductions):
     random_state = 1000000
     kernels = ('linear', 'poly', 'rbf', 'sigmoid')
-    Cs = concatenate([arange(0.1, 1.1, 0.1), arange(2, 6), arange(10, 60, 10)]) #logspace(-4, 3, 15) all kernels
+    Cs = concatenate([[0.001, 0.1, 0.3, 0.5, 0.7], [1, 5], [10, 50, 100]]) #logspace(-4, 3, 15) all kernels
     gammas = (0.001, 0.01, 0.1, 1.0, 10.0, 100.0)# logspace(-2, 3, 9)  # except linear
-    one_gamma = ('auto', 0.1)
-    degrees_poly = (2, 3, 4)  # only poly
+    one_gamma = (0.00043898156, 0.0001, 0.001, 0.003, 0.01)
+    degrees_poly = (2, 3)  # only poly
     one_degree = (3,)
     # Independent term in kernel function. It is only significant in poly and sigmoid
     coef0s = (0.01, 0.1, 1.0, 10.0, 100.0)
