@@ -3,13 +3,14 @@
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import make_pipeline
 import numpy as np
+from numpy.random import randint
 
 def make_pipes(dimensionality_reductions):
-    random_state = 1000000
-    max_features = np.concatenate([["log2", "sqrt"], np.arange(0.05, 1, 0.1)])
-    n_estimators = np.concatenate([np.arange(5, 100, 15), np.arange(200, 1000, 200), np.arange(1000, 11000, 5000)])
-    min_sample_leafs = np.concatenate([np.arange(0.05, 0.3, 0.05)], [100, 200])
-    max_depths = (30, 50, 100, 230)
+    random_state = randint(100000, 999999, 10)
+    max_features = ("log2", "sqrt")
+    n_estimators = np.concatenate([np.arange(1000, 11000, 5000), np.arange(100, 1000, 500)])
+    min_sample_leafs = np.concatenate([np.arange(0.04, 0.4, 0.0755)])
+    max_depths = (50, 70, 120, 200)
 
     pipes = []
     reductions_names = []
@@ -28,12 +29,11 @@ def make_pipes(dimensionality_reductions):
                                 min_samples_leaf=min_sample_leaf,
                                 max_features=max_feature,
                                 bootstrap=True,
-                                oob_score=True,
                                 n_jobs=-1,
                                 random_state=random_state,
                                 class_weight=None)
                     pipe = make_pipeline(dimensionality_reduction, model)
                     pipes.append(pipe)
                     reductions_names.append(dimensionality_reduction.__class__.__name__)
-                    models_names.append('randomForest')
+                    models_names.append('randomforestclassifier')
     return pipes, reductions_names, models_names

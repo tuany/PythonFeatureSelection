@@ -5,6 +5,7 @@ import asd
 import csv
 import progressbar
 import time
+from classifiers.utils import mean_scores
 import initContext as context
 context.loadModules()
 # outros modulos aqui
@@ -98,6 +99,7 @@ def run_combinations():
 							   'dimensionality_reduction': reduction,
 							   'classifier': model_name,
 							   'dataset': k}
+
 					model = current_pipe.named_steps[model_name]
 					params = model.get_params(deep=False)
 					log.info("#%d - Saving results!", id)
