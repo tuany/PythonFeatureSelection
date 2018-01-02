@@ -70,7 +70,7 @@ def run_combinations():
 			id = 0
 			for current_pipe, reduction, model_name in zip(pipes, reductions_names, models_names):
 				try:
-					log.info("Executing Cross-Validation")
+					log.info("#%d - Executing Cross-Validation", id)
 					cv = StratifiedKFold(n_splits=4)
 					cv_results = cross_validate(estimator=current_pipe,
 												X=samples,
@@ -78,7 +78,7 @@ def run_combinations():
 												scoring=scoring,
 												cv=cv,
 												n_jobs=-1)  # all CPUs
-					log.info("Cross-Validation success!")
+					log.info("#%d - Cross-Validation success!", id)
 				except ValueError as e:
 					log.exception("Exception during pipeline execution", extra=e)
 					cv_results = None
@@ -105,7 +105,10 @@ def run_combinations():
 					log.info("#%d - Saving results!", id)
 					results.update(params)
 					writer.writerow(results)
+					
 				id += 1
+				p_done = (100 * float(id)) / float(len(pipes))
+				log.info("%.3f %% of dataset %s processing done...", p_done, k)
 
 if __name__ == '__main__':
 	start_time = time.time()
