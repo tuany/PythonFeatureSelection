@@ -45,15 +45,15 @@ def run_combinations():
 		# labels = code_test_samples(labels)
 		instances, features = samples.shape
 		log.info('Data has {0} instances and {1} features'.format(instances, features))
-		n_features_to_keep = int(0.1 * features)
+		n_features_to_keep = int(0.01 * features)
 
 		dimensionality_reductions = (None,
 									 PCA(n_components=n_features_to_keep),
-									 ReliefF(n_features_to_select=n_features_to_keep, n_neighbors=10, n_jobs=-1),
 									 mRMRProxy(n_features_to_select=n_features_to_keep, verbose=False),
 									 FCBFProxy(n_features_to_select=n_features_to_keep, verbose=False),
 									 CFSProxy(n_features_to_select=n_features_to_keep, verbose=False),
-									 RFSProxy(n_features_to_select=n_features_to_keep, verbose=False)
+									 RFSProxy(n_features_to_select=n_features_to_keep, verbose=False),
+									 ReliefF(n_features_to_select=n_features_to_keep, n_neighbors=50, n_jobs=-1)
 									 )
 
 		pipes, reductions_names, models_names = [], [], []
@@ -65,7 +65,7 @@ def run_combinations():
 
 		log.info('Total de modelos {0}'.format(len(pipes)))
 
-		columns = ['id', 'precision', 'recall', 'f1', 'accuracy', 'dimensionality_reduction', 'error', 'classifier', 'dataset']
+		columns = ['id', 'precision', 'recall', 'f1', 'accuracy', 'dimensionality_reduction', 'error', 'classifier', 'dataset', 'n_features']
 
 		classifiers = [SVC(), GaussianNB()]
 		for classifier in classifiers:
@@ -90,7 +90,7 @@ def run_combinations():
 												scoring=scoring,
 												cv=cv,
 												n_jobs=-1)  # all CPUs
-					log.info("Cross-Validation success!")
+					log.info("#%d - Cross-Validation success!", id)
 				except ValueError as e:
 					log.exception("Exception during pipeline execution", extra=e)
 					cv_results = None
@@ -110,6 +110,7 @@ def run_combinations():
 							   'error': 1-mean_cv_results['test_accuracy'],
 							   'dimensionality_reduction': reduction,
 							   'classifier': model_name,
+							   'n_features': n_features_to_keep,
 							   'dataset': k}
 					model = current_pipe.named_steps[model_name]
 					params = model.get_params(deep=False)
@@ -117,6 +118,8 @@ def run_combinations():
 					results.update(params)
 					writer.writerow(results)
 				id += 1
+				p_done = (100 * float(id)) / float(len(pipes))
+				log.info("%.3f %% of dataset %s processing done...", p_done, k)
 
 if __name__ == '__main__':
 	start_time = time.time()
