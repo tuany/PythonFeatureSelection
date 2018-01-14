@@ -15,8 +15,8 @@ log = logger.getLogger(__file__)
 def run_combinations():
 	all_samples = {}
 
-	X, y = asd.load_data(d_type='euclidian', unit='px', m='1000', dataset='all', labels=False)
-	all_samples['euclidian_px_1000_all'] = (X, y)
+	# X, y = asd.load_data(d_type='euclidian', unit='px', m='1000', dataset='all', labels=False)
+	# all_samples['euclidian_px_1000_all'] = (X, y)
 
 	X, y = asd.load_data(d_type='manhattan', unit='px', m='1000', dataset='all', labels=False)
 	all_samples['manhattan_px_1000_all'] = (X, y)

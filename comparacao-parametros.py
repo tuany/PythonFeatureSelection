@@ -20,17 +20,17 @@ log = logger.getLogger(__file__)
 def run_combinations():
 	all_samples = {}
 
-	X, y = asd.load_data(d_type='euclidian', unit='px', m='1000', dataset='all', labels=False)
-	all_samples['euclidian_px_1000_all'] = (X, y)
-
-	X, y = asd.load_data(d_type='manhattan', unit='px', m='1000', dataset='all', labels=False)
-	all_samples['manhattan_px_1000_all'] = (X, y)
+	X, y = asd.load_data(d_type='manhattan', unit='px', m='', dataset='all', labels=False)
+	all_samples['manhattan_px_all'] = (X, y)
 
 	X, y = asd.load_data(d_type='euclidian', unit='px', m='', dataset='all', labels=False)
 	all_samples['euclidian_px_all'] = (X, y)
 
-	X, y = asd.load_data(d_type='manhattan', unit='px', m='', dataset='all', labels=False)
-	all_samples['manhattan_px_all'] = (X, y)
+	X, y = asd.load_data(d_type='manhattan', unit='px', m='1000', dataset='all', labels=False)
+	all_samples['manhattan_px_1000_all'] = (X, y)
+
+	X, y = asd.load_data(d_type='euclidian', unit='px', m='1000', dataset='all', labels=False)
+	all_samples['euclidian_px_1000_all'] = (X, y)
 
 	for k in all_samples.keys():
 		log.info("Running models for %s dataset", k)
@@ -47,18 +47,20 @@ def run_combinations():
 		log.info('Data has {0} instances and {1} features'.format(instances, features))
 		n_features_to_keep = int(0.01 * features)
 
-		dimensionality_reductions = (None,
-									 PCA(n_components=n_features_to_keep),
-									 mRMRProxy(n_features_to_select=n_features_to_keep, verbose=False),
-									 FCBFProxy(n_features_to_select=n_features_to_keep, verbose=False),
-									 CFSProxy(n_features_to_select=n_features_to_keep, verbose=False),
-									 RFSProxy(n_features_to_select=n_features_to_keep, verbose=False),
-									 ReliefF(n_features_to_select=n_features_to_keep, n_neighbors=50, n_jobs=-1)
+		dimensionality_reductions = (
+									 # PCA(n_components=n_features_to_keep),
+									 # mRMRProxy(n_features_to_select=n_features_to_keep, verbose=False),
+									 # FCBFProxy(n_features_to_select=n_features_to_keep, verbose=False),
+									 CFSProxy(n_features_to_select=22, verbose=False),
+									 CFSProxy(n_features_to_select=13, verbose=False),
+									 CFSProxy(n_features_to_select=6, verbose=False)
+									 # ReliefF(n_features_to_select=n_features_to_keep, n_neighbors=30, n_jobs=-1),
+									 # RFSProxy(n_features_to_select=n_features_to_keep, verbose=False)
 									 )
 
 		pipes, reductions_names, models_names = [], [], []
 		for m in [svm, nb]:
-			pipe, reductions_name, models_name = m.make_pipes(dimensionality_reductions)
+			pipe, reductions_name, models_name = m.make_pipes_lazy(dimensionality_reductions)
 			pipes += pipe
 			reductions_names += reductions_name
 			models_names += models_name
@@ -76,7 +78,7 @@ def run_combinations():
 				   'recall': 'recall',
 				   'f1': 'f1'}
 
-		with open('./output/bloco1-'+k+'.csv', 'wb') as csvfile:
+		with open('./output/bloco-comparacao-svm-'+k+'params-001.csv', 'wb') as csvfile:
 			writer = csv.DictWriter(csvfile, fieldnames=columns)
 			writer.writeheader()
 			id = 0
@@ -102,6 +104,13 @@ def run_combinations():
 					mean_cv_results = mean_scores(cv_results)
 					log.info("#%d - CV result (accuracy) %.2f for model %s and reduction %s", 
 							id, mean_cv_results['test_accuracy'], model_name, reduction)
+
+					rrr = current_pipe.named_steps[reduction]
+					n_features = n_features_to_keep
+					if reduction != 'PCA' or reduction != 'NoneType':
+						n_features = rrr.get_params(deep=False)['n_features_to_select']
+					elif reduction == 'PCA':
+						n_features = rrr.get_params(deep=False)['n_components']
 					results = {'id': id,
 							   'precision': mean_cv_results['test_precision'],
 							   'recall': mean_cv_results['test_recall'],
@@ -110,7 +119,7 @@ def run_combinations():
 							   'error': 1-mean_cv_results['test_accuracy'],
 							   'dimensionality_reduction': reduction,
 							   'classifier': model_name,
-							   'n_features': n_features_to_keep,
+							   'n_features': n_features,
 							   'dataset': k}
 					model = current_pipe.named_steps[model_name]
 					params = model.get_params(deep=False)

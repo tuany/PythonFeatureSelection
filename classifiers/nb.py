@@ -14,3 +14,6 @@ def make_pipes(dimensionality_reductions):
         reductions_names.append(dimensionality_reduction.__class__.__name__)
         models_names.append('gaussiannb')
     return pipes, reductions_names, models_names
+
+def make_pipes_lazy(dimensionality_reductions):
+    return make_pipes(dimensionality_reductions)
