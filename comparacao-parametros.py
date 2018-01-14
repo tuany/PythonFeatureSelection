@@ -105,7 +105,7 @@ def run_combinations():
 					log.info("#%d - CV result (accuracy) %.2f for model %s and reduction %s", 
 							id, mean_cv_results['test_accuracy'], model_name, reduction)
 
-					rrr = current_pipe.named_steps[reduction]
+					rrr = current_pipe.named_steps[reduction.lower()]
 					n_features = n_features_to_keep
 					if reduction != 'PCA' or reduction != 'NoneType':
 						n_features = rrr.get_params(deep=False)['n_features_to_select']
