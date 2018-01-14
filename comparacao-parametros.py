@@ -51,9 +51,10 @@ def run_combinations():
 									 # PCA(n_components=n_features_to_keep),
 									 # mRMRProxy(n_features_to_select=n_features_to_keep, verbose=False),
 									 # FCBFProxy(n_features_to_select=n_features_to_keep, verbose=False),
-									 CFSProxy(n_features_to_select=22, verbose=False),
-									 CFSProxy(n_features_to_select=13, verbose=False),
-									 CFSProxy(n_features_to_select=6, verbose=False)
+									 mRMRProxy(n_features_to_select=22, verbose=False),
+									 mRMRProxy(n_features_to_select=13, verbose=False),
+									 mRMRProxy(n_features_to_select=8, verbose=False),
+									 mRMRProxy(n_features_to_select=6, verbose=False)
 									 # ReliefF(n_features_to_select=n_features_to_keep, n_neighbors=30, n_jobs=-1),
 									 # RFSProxy(n_features_to_select=n_features_to_keep, verbose=False)
 									 )

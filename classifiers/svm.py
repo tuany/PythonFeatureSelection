@@ -78,8 +78,72 @@ def make_pipes_lazy(dimensionality_reductions):
                 probability=True,
                 random_state=734628)
 
+    model5 = SVC(kernel='linear',
+                C=50,
+                gamma=0.1,
+                degree=3,
+                coef0=0.0,
+                probability=True,
+                random_state=1000000)
 
-    models = [model1, model2, model3, model4]
+    model6 = SVC(kernel='poly',
+                C=0.3,
+                gamma=0.01,
+                degree=3,
+                coef0=100,
+                probability=True,
+                random_state=607394)
+
+    model7 = SVC(kernel='rbf',
+                C=1,
+                gamma=0.01,
+                degree=3,
+                coef0=0.0,
+                probability=True,
+                random_state=205908)
+
+    model8 = SVC(kernel='sigmoid',
+                C=1,
+                gamma=0.01,
+                degree=3,
+                coef0=0.1,
+                probability=True,
+                random_state=909336)
+
+    model9 = SVC(kernel='linear',
+                C=1,
+                gamma=0.1,
+                degree=3,
+                coef0=0.0,
+                probability=True,
+                random_state=150773)
+
+    model10 = SVC(kernel='linear',
+                C=5,
+                gamma=0.001,
+                degree=3,
+                coef0=0,
+                probability=True,
+                random_state=1000000)
+
+    model11 = SVC(kernel='poly',
+                C=0.1,
+                gamma=0.001,
+                degree=3,
+                coef0=100,
+                probability=True,
+                random_state=1000000)
+
+    model12 = SVC(kernel='rbf',
+                C=100,
+                gamma=0.01,
+                degree=3,
+                coef0=0.0,
+                probability=True,
+                random_state=1000000)
+
+
+    models = [model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12]
     for dimensionality_reduction in dimensionality_reductions:
         for m in models:
             pipe = make_pipeline(dimensionality_reduction, m)
