@@ -1,0 +1,270 @@
+nohup: ignorando entrada
+17/12/2017 02:17:40 asd.pyc     : INFO     Loading data from csv file
+17/12/2017 02:17:40 asd.pyc     : INFO     Casos file: /home/tuany/workspace/PythonFeatureSelection/data/casos/distances_all_px_1000_euclidian.csv
+17/12/2017 02:17:40 asd.pyc     : INFO     Controles file: /home/tuany/workspace/PythonFeatureSelection/data/controles/distances_all_px_1000_euclidian.csv
+17/12/2017 02:17:40 asd.pyc     : INFO     Loading data from csv file
+17/12/2017 02:17:40 asd.pyc     : INFO     Casos file: /home/tuany/workspace/PythonFeatureSelection/data/casos/distances_all_px_1000_manhattan.csv
+17/12/2017 02:17:40 asd.pyc     : INFO     Controles file: /home/tuany/workspace/PythonFeatureSelection/data/controles/distances_all_px_1000_manhattan.csv
+17/12/2017 02:17:40 asd.pyc     : INFO     Loading data from csv file
+17/12/2017 02:17:40 asd.pyc     : INFO     Casos file: /home/tuany/workspace/PythonFeatureSelection/data/casos/distances_all_px_euclidian.csv
+17/12/2017 02:17:40 asd.pyc     : INFO     Controles file: /home/tuany/workspace/PythonFeatureSelection/data/controles/distances_all_px_euclidian.csv
+17/12/2017 02:17:40 asd.pyc     : INFO     Loading data from csv file
+17/12/2017 02:17:40 asd.pyc     : INFO     Casos file: /home/tuany/workspace/PythonFeatureSelection/data/casos/distances_all_px_manhattan.csv
+17/12/2017 02:17:40 asd.pyc     : INFO     Controles file: /home/tuany/workspace/PythonFeatureSelection/data/controles/distances_all_px_manhattan.csv
+17/12/2017 02:17:40 conjunto4.py: INFO     Running models for euclidian_px_1000_all dataset
+17/12/2017 02:17:40 conjunto4.py: INFO     X.shape (111, 2278), y.shape (111,)
+17/12/2017 02:17:40 conjunto4.py: INFO     Data has 111 instances and 2278 features
+17/12/2017 02:17:40 conjunto4.py: INFO     Total de modelos 7
+17/12/2017 02:17:40 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:17:40 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:17:40 conjunto4.py: INFO     #0 - CV result (accuracy) 0.75 for model gaussiannb and reduction NoneType
+17/12/2017 02:17:40 conjunto4.py: INFO     #0 - Saving results!
+17/12/2017 02:17:40 conjunto4.py: INFO     Executing Cross-Validation
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+17/12/2017 02:17:40 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:17:40 conjunto4.py: INFO     #1 - CV result (accuracy) 0.63 for model gaussiannb and reduction PCA
+17/12/2017 02:17:40 conjunto4.py: INFO     #1 - Saving results!
+17/12/2017 02:17:40 conjunto4.py: INFO     Executing Cross-Validation
+/usr/local/lib/python2.7/dist-packages/sklearn/externals/joblib/parallel.py:547: UserWarning: Multiprocessing-backed parallel loops cannot be nested, setting n_jobs=1
+  **self._backend_args)
+/usr/local/lib/python2.7/dist-packages/sklearn/externals/joblib/parallel.py:547: UserWarning: Multiprocessing-backed parallel loops cannot be nested, setting n_jobs=1
+  **self._backend_args)
+/usr/local/lib/python2.7/dist-packages/sklearn/externals/joblib/parallel.py:547: UserWarning: Multiprocessing-backed parallel loops cannot be nested, setting n_jobs=1
+  **self._backend_args)
+/usr/local/lib/python2.7/dist-packages/sklearn/externals/joblib/parallel.py:547: UserWarning: Multiprocessing-backed parallel loops cannot be nested, setting n_jobs=1
+  **self._backend_args)
+17/12/2017 02:17:52 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:17:52 conjunto4.py: INFO     #2 - CV result (accuracy) 0.37 for model gaussiannb and reduction ReliefF
+17/12/2017 02:17:52 conjunto4.py: INFO     #2 - Saving results!
+17/12/2017 02:17:52 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:17:53 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:17:53 conjunto4.py: INFO     #3 - CV result (accuracy) 0.75 for model gaussiannb and reduction mRMRProxy
+17/12/2017 02:17:53 conjunto4.py: INFO     #3 - Saving results!
+17/12/2017 02:17:53 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:17:55 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:17:55 conjunto4.py: INFO     #4 - CV result (accuracy) 0.75 for model gaussiannb and reduction FCBFProxy
+17/12/2017 02:17:55 conjunto4.py: INFO     #4 - Saving results!
+17/12/2017 02:17:55 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:20:28 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:20:28 conjunto4.py: INFO     #5 - CV result (accuracy) 0.75 for model gaussiannb and reduction CFSProxy
+17/12/2017 02:20:28 conjunto4.py: INFO     #5 - Saving results!
+17/12/2017 02:20:28 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:28:47 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:28:47 conjunto4.py: INFO     #6 - CV result (accuracy) 0.75 for model gaussiannb and reduction RFSProxy
+17/12/2017 02:28:47 conjunto4.py: INFO     #6 - Saving results!
+17/12/2017 02:28:47 conjunto4.py: INFO     Running models for manhattan_px_1000_all dataset
+17/12/2017 02:28:47 conjunto4.py: INFO     X.shape (111, 2278), y.shape (111,)
+17/12/2017 02:28:47 conjunto4.py: INFO     Data has 111 instances and 2278 features
+17/12/2017 02:28:47 conjunto4.py: INFO     Total de modelos 7
+17/12/2017 02:28:47 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:28:47 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:28:47 conjunto4.py: INFO     #0 - CV result (accuracy) 0.75 for model gaussiannb and reduction NoneType
+17/12/2017 02:28:47 conjunto4.py: INFO     #0 - Saving results!
+17/12/2017 02:28:47 conjunto4.py: INFO     Executing Cross-Validation
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+17/12/2017 02:28:47 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:28:47 conjunto4.py: INFO     #1 - CV result (accuracy) 0.63 for model gaussiannb and reduction PCA
+17/12/2017 02:28:47 conjunto4.py: INFO     #1 - Saving results!
+17/12/2017 02:28:47 conjunto4.py: INFO     Executing Cross-Validation
+/usr/local/lib/python2.7/dist-packages/sklearn/externals/joblib/parallel.py:547: UserWarning: Multiprocessing-backed parallel loops cannot be nested, setting n_jobs=1
+  **self._backend_args)
+/usr/local/lib/python2.7/dist-packages/sklearn/externals/joblib/parallel.py:547: UserWarning: Multiprocessing-backed parallel loops cannot be nested, setting n_jobs=1
+  **self._backend_args)
+/usr/local/lib/python2.7/dist-packages/sklearn/externals/joblib/parallel.py:547: UserWarning: Multiprocessing-backed parallel loops cannot be nested, setting n_jobs=1
+  **self._backend_args)
+/usr/local/lib/python2.7/dist-packages/sklearn/externals/joblib/parallel.py:547: UserWarning: Multiprocessing-backed parallel loops cannot be nested, setting n_jobs=1
+  **self._backend_args)
+17/12/2017 02:29:00 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:29:00 conjunto4.py: INFO     #2 - CV result (accuracy) 0.37 for model gaussiannb and reduction ReliefF
+17/12/2017 02:29:00 conjunto4.py: INFO     #2 - Saving results!
+17/12/2017 02:29:00 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:29:02 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:29:02 conjunto4.py: INFO     #3 - CV result (accuracy) 0.75 for model gaussiannb and reduction mRMRProxy
+17/12/2017 02:29:02 conjunto4.py: INFO     #3 - Saving results!
+17/12/2017 02:29:02 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:29:04 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:29:04 conjunto4.py: INFO     #4 - CV result (accuracy) 0.75 for model gaussiannb and reduction FCBFProxy
+17/12/2017 02:29:04 conjunto4.py: INFO     #4 - Saving results!
+17/12/2017 02:29:04 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:31:39 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:31:39 conjunto4.py: INFO     #5 - CV result (accuracy) 0.75 for model gaussiannb and reduction CFSProxy
+17/12/2017 02:31:39 conjunto4.py: INFO     #5 - Saving results!
+17/12/2017 02:31:39 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:35:23 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:35:23 conjunto4.py: INFO     #6 - CV result (accuracy) 0.76 for model gaussiannb and reduction RFSProxy
+17/12/2017 02:35:23 conjunto4.py: INFO     #6 - Saving results!
+17/12/2017 02:35:23 conjunto4.py: INFO     Running models for euclidian_px_all dataset
+17/12/2017 02:35:23 conjunto4.py: INFO     X.shape (111, 2278), y.shape (111,)
+17/12/2017 02:35:23 conjunto4.py: INFO     Data has 111 instances and 2278 features
+17/12/2017 02:35:23 conjunto4.py: INFO     Total de modelos 7
+17/12/2017 02:35:23 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:35:23 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:35:23 conjunto4.py: INFO     #0 - CV result (accuracy) 0.75 for model gaussiannb and reduction NoneType
+17/12/2017 02:35:23 conjunto4.py: INFO     #0 - Saving results!
+17/12/2017 02:35:23 conjunto4.py: INFO     Executing Cross-Validation
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+17/12/2017 02:35:23 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:35:23 conjunto4.py: INFO     #1 - CV result (accuracy) 0.63 for model gaussiannb and reduction PCA
+17/12/2017 02:35:23 conjunto4.py: INFO     #1 - Saving results!
+17/12/2017 02:35:23 conjunto4.py: INFO     Executing Cross-Validation
+/usr/local/lib/python2.7/dist-packages/sklearn/externals/joblib/parallel.py:547: UserWarning: Multiprocessing-backed parallel loops cannot be nested, setting n_jobs=1
+  **self._backend_args)
+/usr/local/lib/python2.7/dist-packages/sklearn/externals/joblib/parallel.py:547: UserWarning: Multiprocessing-backed parallel loops cannot be nested, setting n_jobs=1
+  **self._backend_args)
+/usr/local/lib/python2.7/dist-packages/sklearn/externals/joblib/parallel.py:547: UserWarning: Multiprocessing-backed parallel loops cannot be nested, setting n_jobs=1
+  **self._backend_args)
+/usr/local/lib/python2.7/dist-packages/sklearn/externals/joblib/parallel.py:547: UserWarning: Multiprocessing-backed parallel loops cannot be nested, setting n_jobs=1
+  **self._backend_args)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+17/12/2017 02:35:35 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:35:35 conjunto4.py: INFO     #2 - CV result (accuracy) 0.63 for model gaussiannb and reduction ReliefF
+17/12/2017 02:35:35 conjunto4.py: INFO     #2 - Saving results!
+17/12/2017 02:35:35 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:35:36 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:35:36 conjunto4.py: INFO     #3 - CV result (accuracy) 0.75 for model gaussiannb and reduction mRMRProxy
+17/12/2017 02:35:36 conjunto4.py: INFO     #3 - Saving results!
+17/12/2017 02:35:36 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:35:38 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:35:38 conjunto4.py: INFO     #4 - CV result (accuracy) 0.75 for model gaussiannb and reduction FCBFProxy
+17/12/2017 02:35:38 conjunto4.py: INFO     #4 - Saving results!
+17/12/2017 02:35:38 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:38:11 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:38:11 conjunto4.py: INFO     #5 - CV result (accuracy) 0.74 for model gaussiannb and reduction CFSProxy
+17/12/2017 02:38:11 conjunto4.py: INFO     #5 - Saving results!
+17/12/2017 02:38:11 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:46:34 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:46:34 conjunto4.py: INFO     #6 - CV result (accuracy) 0.75 for model gaussiannb and reduction RFSProxy
+17/12/2017 02:46:34 conjunto4.py: INFO     #6 - Saving results!
+17/12/2017 02:46:34 conjunto4.py: INFO     Running models for manhattan_px_all dataset
+17/12/2017 02:46:34 conjunto4.py: INFO     X.shape (110, 2278), y.shape (110,)
+17/12/2017 02:46:34 conjunto4.py: INFO     Data has 110 instances and 2278 features
+17/12/2017 02:46:34 conjunto4.py: INFO     Total de modelos 7
+17/12/2017 02:46:34 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:46:35 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:46:35 conjunto4.py: INFO     #0 - CV result (accuracy) 0.74 for model gaussiannb and reduction NoneType
+17/12/2017 02:46:35 conjunto4.py: INFO     #0 - Saving results!
+17/12/2017 02:46:35 conjunto4.py: INFO     Executing Cross-Validation
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+17/12/2017 02:46:35 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:46:35 conjunto4.py: INFO     #1 - CV result (accuracy) 0.64 for model gaussiannb and reduction PCA
+17/12/2017 02:46:35 conjunto4.py: INFO     #1 - Saving results!
+17/12/2017 02:46:35 conjunto4.py: INFO     Executing Cross-Validation
+/usr/local/lib/python2.7/dist-packages/sklearn/externals/joblib/parallel.py:547: UserWarning: Multiprocessing-backed parallel loops cannot be nested, setting n_jobs=1
+  **self._backend_args)
+/usr/local/lib/python2.7/dist-packages/sklearn/externals/joblib/parallel.py:547: UserWarning: Multiprocessing-backed parallel loops cannot be nested, setting n_jobs=1
+  **self._backend_args)
+/usr/local/lib/python2.7/dist-packages/sklearn/externals/joblib/parallel.py:547: UserWarning: Multiprocessing-backed parallel loops cannot be nested, setting n_jobs=1
+  **self._backend_args)
+/usr/local/lib/python2.7/dist-packages/sklearn/externals/joblib/parallel.py:547: UserWarning: Multiprocessing-backed parallel loops cannot be nested, setting n_jobs=1
+  **self._backend_args)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: F-score is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/usr/local/lib/python2.7/dist-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples.
+  'precision', 'predicted', average, warn_for)
+17/12/2017 02:46:47 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:46:47 conjunto4.py: INFO     #2 - CV result (accuracy) 0.64 for model gaussiannb and reduction ReliefF
+17/12/2017 02:46:47 conjunto4.py: INFO     #2 - Saving results!
+17/12/2017 02:46:47 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:46:48 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:46:48 conjunto4.py: INFO     #3 - CV result (accuracy) 0.73 for model gaussiannb and reduction mRMRProxy
+17/12/2017 02:46:48 conjunto4.py: INFO     #3 - Saving results!
+17/12/2017 02:46:48 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:46:50 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:46:50 conjunto4.py: INFO     #4 - CV result (accuracy) 0.75 for model gaussiannb and reduction FCBFProxy
+17/12/2017 02:46:50 conjunto4.py: INFO     #4 - Saving results!
+17/12/2017 02:46:50 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:47:32 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:47:32 conjunto4.py: INFO     #5 - CV result (accuracy) 0.74 for model gaussiannb and reduction CFSProxy
+17/12/2017 02:47:32 conjunto4.py: INFO     #5 - Saving results!
+17/12/2017 02:47:32 conjunto4.py: INFO     Executing Cross-Validation
+17/12/2017 02:54:24 conjunto4.py: INFO     Cross-Validation success!
+17/12/2017 02:54:24 conjunto4.py: INFO     #6 - CV result (accuracy) 0.75 for model gaussiannb and reduction RFSProxy
+17/12/2017 02:54:24 conjunto4.py: INFO     #6 - Saving results!
+17/12/2017 02:54:24 conjunto4.py: INFO     --- Total execution time: 36.7404220184 minutes ---
