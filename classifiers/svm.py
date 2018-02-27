@@ -142,8 +142,16 @@ def make_pipes_lazy(dimensionality_reductions):
                 probability=True,
                 random_state=1000000)
 
+    model13 = SVC(kernel='sigmoid',
+                C=0.3,
+                gamma=0.0004389816,
+                degree=3,
+                coef0=0.01,
+                probability=True,
+                random_state=1000000)
 
-    models = [model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12]
+
+    models = [model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13]
     for dimensionality_reduction in dimensionality_reductions:
         for m in models:
             pipe = make_pipeline(dimensionality_reduction, m)

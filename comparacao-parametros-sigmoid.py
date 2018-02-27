@@ -48,18 +48,36 @@ def run_combinations():
 		n_features_to_keep = int(0.01 * features)
 
 		dimensionality_reductions = (
-									 # PCA(n_components=227),
-									 # mRMRProxy(n_features_to_select=227, verbose=False),
-									 # FCBFProxy(n_features_to_select=227, verbose=False),
-									 # CFSProxy(n_features_to_select=227, verbose=False),
-									 # ReliefF(n_features_to_select=227, n_neighbors=30, n_jobs=-1),
-									 # RFSProxy(n_features_to_select=227, verbose=False),
-									 # PCA(n_components=114),
-									 # mRMRProxy(n_features_to_select=114, verbose=False),
-									 # FCBFProxy(n_features_to_select=114, verbose=False),
-									 # CFSProxy(n_features_to_select=114, verbose=False),
-									 # ReliefF(n_features_to_select=114, n_neighbors=30, n_jobs=-1),
-									 # RFSProxy(n_features_to_select=114, verbose=False)
+									 PCA(n_components=22),
+									 PCA(n_components=17),
+									 PCA(n_components=13),
+									 PCA(n_components=8),
+									 PCA(n_components=6),
+									 CFSProxy(n_features_to_select=22, verbose=False),
+									 CFSProxy(n_features_to_select=17, verbose=False),
+									 CFSProxy(n_features_to_select=13, verbose=False),
+									 CFSProxy(n_features_to_select=8, verbose=False),
+									 CFSProxy(n_features_to_select=6, verbose=False),
+									 FCBFProxy(n_features_to_select=22, verbose=False),
+									 FCBFProxy(n_features_to_select=17, verbose=False),
+									 FCBFProxy(n_features_to_select=13, verbose=False),
+									 FCBFProxy(n_features_to_select=8, verbose=False),
+									 FCBFProxy(n_features_to_select=6, verbose=False),
+									 mRMRProxy(n_features_to_select=22, verbose=False),
+									 mRMRProxy(n_features_to_select=17, verbose=False),
+									 mRMRProxy(n_features_to_select=13, verbose=False),
+									 mRMRProxy(n_features_to_select=8, verbose=False),
+									 mRMRProxy(n_features_to_select=6, verbose=False),
+									 ReliefF(n_features_to_select=22, n_neighbors=30, n_jobs=-1),
+									 ReliefF(n_features_to_select=17, n_neighbors=30, n_jobs=-1),
+									 ReliefF(n_features_to_select=13, n_neighbors=30, n_jobs=-1),
+									 ReliefF(n_features_to_select=8, n_neighbors=30, n_jobs=-1),
+									 ReliefF(n_features_to_select=6, n_neighbors=30, n_jobs=-1),
+									 RFSProxy(n_features_to_select=22, verbose=False),
+									 RFSProxy(n_features_to_select=17, verbose=False),
+									 RFSProxy(n_features_to_select=13, verbose=False),
+									 RFSProxy(n_features_to_select=8, verbose=False),
+									 RFSProxy(n_features_to_select=6, verbose=False)
 									 )
 
 		pipes, reductions_names, models_names = [], [], []
@@ -82,7 +100,7 @@ def run_combinations():
 				   'recall': 'recall',
 				   'f1': 'f1'}
 
-		with open('./output/bloco-comparacao-svm-'+k+'params-011.csv', 'wb') as csvfile:
+		with open('./output/bloco-comparacao-svm-'+k+'params-007.csv', 'wb') as csvfile:
 			writer = csv.DictWriter(csvfile, fieldnames=columns)
 			writer.writeheader()
 			id = 0
